@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userCar_id")
     private Car userCar;
 
@@ -25,13 +25,16 @@ public class User {
     @Column(name = "email")
     private String email;
 
+
+
     public User() {
     }
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email,Car userCar) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.userCar = userCar;
     }
 
 

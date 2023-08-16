@@ -10,5 +10,5 @@ public interface UserService {
 
     public void deleteUsers();
 
-    public User findUserByCar (String module, String series);
+    public User findUserByCar (String model, String series);
 }
